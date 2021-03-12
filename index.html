@@ -2,10 +2,939 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Righteous&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <title>Executive</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Hello world</h1>
-    <p> My name is Vika!</p>
+<!--Sprite-->
+    <svg style="display: none;">
+        <symbol id="graphic" viewBox="0 0 27.124 27.125">
+            <g>
+                <path d="M12.812,14.56h12.312c0,6.938-5.625,12.562-12.562,12.562S0,21.498,0,14.56C0,7.624,5.625,1.999,12.562,1.999
+		        c0.084,0,0.166,0.012,0.25,0.014V14.56z M27.124,13.06v0.5H13.812V0.001l0.51,0.01C21.38,0.15,27.124,6.003,27.124,13.06z
+		        M26.113,12.561C25.857,6.439,20.93,1.415,14.812,1.034v11.527H26.113z"/>
+            </g>
+        </symbol>
+
+        <symbol id="computer" viewBox="0 0 469.333 469.333">
+            <g>
+                <path d="M426.667,21.333h-384C19.093,21.333,0,40.427,0,64v256c0,23.573,19.093,42.667,42.667,42.667H192l-42.667,64V448H320
+			v-21.333l-42.667-64h149.333c23.573,0,42.667-19.093,42.667-42.667V64C469.333,40.427,450.24,21.333,426.667,21.333z
+			 M426.667,277.333h-384V64h384V277.333z"/>
+            </g>
+        </symbol>
+
+        <symbol id="dolar" viewBox="0 0 212.755 212.755">
+            <g>
+                <path d="M106.377,0C47.721,0,0,47.721,0,106.377s47.721,106.377,106.377,106.377s106.377-47.721,106.377-106.377
+                S165.034,0,106.377,0z M106.377,198.755C55.44,198.755,14,157.314,14,106.377S55.44,14,106.377,14s92.377,41.44,92.377,92.377
+                S157.314,198.755,106.377,198.755z"/>
+                <path d="m113.377,100.096v-39.744c3.961,1.471 7.417,4.17 9.82,7.82 2.127,3.229 6.468,4.123 9.696,
+                1.997 3.229-2.126 4.123-6.467 1.996-9.696-5.029-7.636-12.778-12.82-21.512-14.647v-11.12c0-3.866-3.134-7-7-7s-7,
+                3.134-7,7v11.099c-15.493,3.23-27.168,16.989-27.168,33.426 0,16.437 11.676,30.198 27.168,33.428v39.744c-3.961-1.471-7.417-4.17-9.82-7.82-2.127-3.229-6.468-4.124-9.696-1.997-3.229,
+                2.126-4.123,6.467-1.996,9.696 5.029,7.636 12.778,12.82 21.512,14.647v11.119c0,3.866 3.134,7 7,7s7-3.134 7-7v-11.098c15.493-3.23 27.168-16.989 27.168-33.426-2.84217e-14-16.437-11.675-30.198-27.168-33.428zm-27.168-20.865c0-8.653 5.494-16.027 13.168-18.874v37.748c-7.674-2.847-13.168-10.221-13.168-18.874zm27.168,
+                73.166v-37.748c7.674,2.847 13.168,10.221 13.168,18.874s-5.493,16.027-13.168,18.874z"/>
+            </g>
+        </symbol>
+
+        <symbol id="laptop" viewBox="0 0 503.588 503.588">
+            <g>
+                <path d="M499.312,375.728h-23.256v-260.76c0-17.776-14.72-30.384-32.492-30.384H59.556c-17.784,0-32.016,12.604-32.016,30.384
+			v260.756H3.8c-2.172,0-3.8-0.204-3.8,1.968v3.664c0,19.724,15.904,37.648,35.62,37.648h431.86
+			c19.728,0,36.108-17.924,36.108-37.648v-3.664C503.592,375.524,501.484,375.728,499.312,375.728z M246.008,96.676
+			c2.912-2.952,8.18-2.952,11.092,0c1.492,1.452,2.32,3.5,2.32,5.548c0,2.084-0.828,4.092-2.32,5.584
+			c-1.46,1.456-3.464,2.28-5.544,2.28s-4.092-0.824-5.548-2.28c-1.5-1.496-2.324-3.504-2.324-5.584
+			C243.688,100.136,244.512,98.128,246.008,96.676z M452.444,359.988h-401.3V119.996h401.3V359.988z"/>
+            </g>
+        </symbol>
+
+        <symbol id="picture" viewBox="0 0 548.176 548.176">
+            <g>
+                <path d="M534.75,68.238c-8.945-8.945-19.694-13.417-32.261-13.417H45.681c-12.562,0-23.313,4.471-32.264,13.417
+			C4.471,77.185,0,87.936,0,100.499v347.173c0,12.566,4.471,23.318,13.417,32.264c8.951,8.946,19.702,13.419,32.264,13.419h456.815
+			c12.56,0,23.312-4.473,32.258-13.419c8.945-8.945,13.422-19.697,13.422-32.264V100.499
+			C548.176,87.936,543.699,77.185,534.75,68.238z M511.623,447.672c0,2.478-0.899,4.613-2.707,6.427
+			c-1.81,1.8-3.952,2.703-6.427,2.703H45.681c-2.473,0-4.615-0.903-6.423-2.703c-1.807-1.813-2.712-3.949-2.712-6.427V100.495
+			c0-2.474,0.902-4.611,2.712-6.423c1.809-1.803,3.951-2.708,6.423-2.708h456.815c2.471,0,4.613,0.905,6.42,2.708
+			c1.801,1.812,2.707,3.949,2.707,6.423V447.672L511.623,447.672z"/>
+                <path d="M127.91,237.541c15.229,0,28.171-5.327,38.831-15.987c10.657-10.66,15.987-23.601,15.987-38.826
+			c0-15.23-5.333-28.171-15.987-38.832c-10.66-10.656-23.603-15.986-38.831-15.986c-15.227,0-28.168,5.33-38.828,15.986
+			c-10.656,10.66-15.986,23.601-15.986,38.832c0,15.225,5.327,28.169,15.986,38.826C99.742,232.211,112.683,237.541,127.91,237.541z
+			"/>
+                <polygon points="210.134,319.765 164.452,274.088 73.092,365.447 73.092,420.267 475.085,420.267 475.085,292.36 356.315,173.587
+					"/>
+            </g>
+        </symbol>
+
+        <symbol id="volume" viewBox="0 0 480 480">
+            <g>
+                <path d="m278.944 17.577c-5.568-2.656-12.128-1.952-16.928 1.92l-155.648 124.512h-74.368c-17.632 0-32 14.368-32
+                32v128c0 17.664 14.368 32 32 32h74.368l155.616 124.512c2.912 2.304 6.464 3.488 10.016 3.488 2.368 0 4.736-.544
+                6.944-1.6 5.536-2.656 9.056-8.256 9.056-14.4v-416c0-6.144-3.52-11.744-9.056-14.432z"/>
+                <path d="m368.992 126.857c-6.304-6.208-16.416-6.112-22.624.128-6.208 6.304-6.144 16.416.128 22.656 24.192 23.872
+                 37.504 55.968 37.504 90.368s-13.312 66.496-37.504 90.368c-6.272 6.176-6.336 16.32-.128 22.624 3.136 3.168 7.264
+                 4.736 11.36 4.736 4.064 0 8.128-1.536 11.264-4.64 30.336-29.856 47.008-70.048
+                 47.008-113.088s-16.672-83.232-47.008-113.152z"/>
+                <path d="m414.144 81.769c-6.304-6.24-16.416-6.176-22.656.096-6.208 6.272-6.144 16.416.096 22.624 36.384 36.064
+                56.416 84.192 56.416 135.52s-20.032 99.424-56.416 135.488c-6.24 6.24-6.304 16.384-.096 22.656 3.168 3.136 7.264
+                4.704 11.36 4.704 4.064 0 8.16-1.536 11.296-4.64 42.496-42.08 65.856-98.272
+                65.856-158.208s-23.36-116.128-65.856-158.24z"/>
+            </g>
+        </symbol>
+
+        <symbol id="plus" viewBox="0 0 37.166 37.166">
+            <g>
+                <path d="M35.829,32.045l-6.833-6.833c-0.513-0.513-1.167-0.788-1.836-0.853c2.06-2.567,3.298-5.819,3.298-9.359
+		c0-8.271-6.729-15-15-15c-8.271,0-15,6.729-15,15c0,8.271,6.729,15,15,15c3.121,0,6.021-0.96,8.424-2.598
+		c0.018,0.744,0.305,1.482,0.872,2.052l6.833,6.833c0.585,0.586,1.354,0.879,2.121,0.879s1.536-0.293,2.121-0.879
+		C37.001,35.116,37.001,33.217,35.829,32.045z M15.458,25c-5.514,0-10-4.484-10-10c0-5.514,4.486-10,10-10c5.514,0,10,4.486,10,10
+		C25.458,20.516,20.972,25,15.458,25z M22.334,15c0,1.104-0.896,2-2,2h-2.75v2.75c0,1.104-0.896,2-2,2s-2-0.896-2-2V17h-2.75
+		c-1.104,0-2-0.896-2-2s0.896-2,2-2h2.75v-2.75c0-1.104,0.896-2,2-2s2,0.896,2,2V13h2.75C21.438,13,22.334,13.895,22.334,15z"/>
+            </g>
+        </symbol>
+
+        <symbol id="microphone" viewBox="-90 1 511 511.99899">
+            <g>
+                <path d="m332.464844 275.082031c0-8.429687-6.835938-15.265625-15.269532-15.265625-8.433593 0-15.269531
+    6.835938-15.269531 15.265625 0 74.6875-60.757812 135.445313-135.445312 135.445313-74.683594
+    0-135.441407-60.757813-135.441407-135.445313 0-8.429687-6.835937-15.265625-15.269531-15.265625-8.433593 0-15.269531
+    6.835938-15.269531 15.265625 0 86.378907 66.320312 157.539063 150.710938 165.273438v41.105469h-56.664063c-8.433594
+    0-15.269531 6.835937-15.269531 15.269531 0 8.433593 6.835937 15.269531 15.269531 15.269531h143.871094c8.429687 0
+    15.265625-6.835938 15.265625-15.269531 0-8.433594-6.835938-15.269531-15.265625-15.269531h-56.667969v-41.105469c84.394531-7.730469
+    150.714844-78.894531 150.714844-165.273438zm0 0"/>
+                <path d="m166.480469 372.851562c53.910156 0 97.769531-43.859374
+    97.769531-97.769531v-177.316406c0-53.90625-43.859375-97.765625-97.769531-97.765625-53.90625 0-97.765625
+    43.859375-97.765625 97.765625v177.316406c0 53.910157 43.859375 97.769531 97.765625
+    97.769531zm-67.230469-275.085937c0-37.070313 30.160156-67.226563 67.230469-67.226563 37.070312 0 67.230469 30.15625
+    67.230469 67.226563v177.316406c0 37.070313-30.160157 67.230469-67.230469 67.230469-37.070313
+    0-67.230469-30.160156-67.230469-67.230469zm0 0"/>
+            </g>
+        </symbol>
+
+        <symbol id="precent" viewBox="0 0 72.722 72.722">
+            <g>
+                <path d="M66.137,18.801h-3.188h-4.962c2.904-1.824,4.811-4.823,4.811-8.214c0-5.549-5.088-10.063-11.341-10.063
+		c-5.306,0-11.589,9.093-15.096,14.97c-3.507-5.876-9.792-14.97-15.097-14.97c-6.253,0-11.341,4.515-11.341,10.063
+		c0,3.391,1.906,6.39,4.811,8.214H10.26H6.586C2.955,18.801,0,21.755,0,25.385v10.439c0,2.586,1.502,4.821,3.676,5.897v23.89
+		c0,3.632,2.954,6.586,6.584,6.586h52.688c3.632,0,6.586-2.954,6.586-6.586V41.456c1.907-1.154,3.188-3.242,3.188-5.63v-10.44
+		C72.723,21.756,69.769,18.801,66.137,18.801z M6.586,36.409C6.263,36.409,6,36.147,6,35.825v-10.44
+		c0-0.322,0.263-0.584,0.586-0.584H33.36v11.607L6.586,36.409L6.586,36.409z M39.361,24.801h26.776c0.323,0,0.586,0.262,0.586,0.584
+		v10.439c0,0.322-0.263,0.584-0.586,0.584H39.361V24.801z M51.456,6.524c2.895,0,5.341,1.861,5.341,4.063s-2.446,4.063-5.341,4.063
+		h-7.41C47.081,10.267,50.199,6.784,51.456,6.524z M21.181,6.519c1.32,0.264,4.454,3.749,7.493,8.133h-7.41
+		c-2.895,0-5.341-1.861-5.341-4.063S18.369,6.524,21.181,6.519z M9.676,65.613V42.409h23.685v23.789H10.26
+		C9.938,66.199,9.676,65.936,9.676,65.613z M62.949,66.199H39.361V42.409h24.174v23.203C63.535,65.936,63.272,66.199,62.949,66.199z
+		"/>
+            </g>
+        </symbol>
+
+        <symbol id="smartphone" viewBox="-258.109 -7 1024 1024">
+            <g>
+                <path d="M332.391,2.5h0.5v6.81c-0.32-0.35-0.5-0.81-0.5-1.31V2.5z"/>
+                <path d="M416.221,2.5V8c0,0.67-0.33,1.26-0.83,1.62V2.5H416.221z"/>
+                <path d="M4.28,337.67V941c0,40.869,33.13,74,74,74h367.5c40.87,0,74-33.131,74-74V78.5c0-40.87-33.13-74-74-74H431V2
+    c0-1.1-0.89-2-2-2h-79.83c-1.1,0-2,0.9-2,2v2.5H78.28c-40.87,0-74,33.13-74,74v15.58
+    M4.28,290.5v-0.42H2c-1.1,0-2,0.9-2,2v43.59  c0,1.1,0.9,2,2,2h2.28v-0.42 M4.28,237.17v52.91
+    M4.28,200.41v-0.33H2c-1.1,0-2,0.7-2,1.56v33.97c0,0.86,0.9,1.56,2,1.56h2.28v-0.33
+    M4.28,141.67v58.41 M4.28,94.5v-0.42H2c-1.1,0-2,0.9-2,2v43.59c0,1.1,0.9,2,2,2h2.28v-0.42 M213.154,92.713
+    c0-5.924,5.059-10.726,11.301-10.726h75.148c6.24,0,11.301,4.802,11.301,10.726v1.341c0,
+    5.924-5.061,10.726-11.301,10.726h-75.148  c-6.242,0-11.301-4.802-11.301-10.726V92.713z
+    M174.363,81.438c6.598,0,11.945,5.348,11.945,11.946s-5.347,11.946-11.945,11.946
+    s-11.946-5.348-11.946-11.946S167.765,81.438,174.363,81.438z M262.029,971.25c-26.74,0-48.417-21.678-48.417-48.416
+    c0-26.74,21.677-48.418,48.417-48.418c26.739,0,48.417,21.678,48.417,48.418C310.446,949.573,288.769,971.25,
+    262.029,971.25z   M38.029,179.333c0-3.313,2.686-6,6-6h436c3.313,0,6,2.687,6,6V836c0,3.313-2.687,6-6,6h-436c-3.314,
+    0-6-2.688-6-6"/>
+            </g>
+        </symbol>
+
+        <symbol id="bulb" viewBox="0 0 16 16">
+            <g>
+                <path d="M11.7 1.9c-1-1.2-2.6-1.9-4.2-1.9s-3.2 0.7-4.2 1.9c-1 1.1-1.4 2.6-1.2 4 0.2 1.5 0.8 2.6 2.1 3.7
+0.5 0.4 0.7 0.8 0.9 1.2 0 0.1 0.1 0.2 0.1 0.3-0.1 0.1-0.2 0.2-0.2 0.4 0 0.3 0.2 0.5 0.5 0.5-0.3 0-0.5 0.2-0.5
+0.5s0.2 0.5 0.5 0.5c-0.3 0-0.5 0.2-0.5 0.5s0.2 0.5 0.5 0.5c-0.3 0-0.5 0.2-0.5 0.5s0.2 0.5 0.5 0.5h0.5c0 0.5 0.7 1 1.5
+1s1.5-0.5 1.5-1h0.5c0.3 0 0.5-0.2 0.5-0.5s-0.2-0.5-0.5-0.5c0.3 0 0.5-0.2 0.5-0.5s-0.2-0.5-0.5-0.5c0.3 0 0.5-0.2
+0.5-0.5s-0.2-0.5-0.5-0.5c0.3 0 0.5-0.2 0.5-0.5 0-0.2-0.1-0.3-0.2-0.4 0-0.1 0.1-0.1 0.1-0.2 0.2-0.4 0.4-0.8 0.9-1.2
+1.3-1.1 1.9-2.2 2.1-3.8 0.2-1.4-0.2-2.8-1.2-4zM12 5.8c-0.2 1.3-0.7 2.2-1.8 3.2-0.6 0.5-0.9 1-1.2 1.4-0.2 0.5-0.3
+0.6-0.5 0.6h-2c-0.2 0-0.3-0.1-0.5-0.6-0.2-0.4-0.5-1-1.1-1.6-1.3-1.1-1.6-2-1.8-3-0.2-1.1 0.2-2.3 0.9-3.2 0.9-1 2.2-1.6
+3.5-1.6s2.6 0.6 3.5 1.6c0.7 0.9 1.1 2.1 1 3.2z"></path>
+                <path d="M11 5h-1c0-0.7-0.8-2-2-2v-1c1.8 0 3 1.8 3 3z"></path>
+            </g>
+        </symbol>
+
+        <symbol id="home" viewBox="0 0 460.298 460.297">
+            <g>
+                <path d="M230.149,120.939L65.986,256.274c0,0.191-0.048,0.472-0.144,0.855c-0.094,0.38-0.144,0.656-0.144,0.852v137.041
+			c0,4.948,1.809,9.236,5.426,12.847c3.616,3.613,7.898,5.431,12.847,5.431h109.63V303.664h73.097v109.64h109.629
+			c4.948,0,9.236-1.814,12.847-5.435c3.617-3.607,5.432-7.898,5.432-12.847V257.981c0-0.76-0.104-1.334-0.288-1.707L230.149,120.939
+			z"/>
+                <path d="M457.122,225.438L394.6,173.476V56.989c0-2.663-0.856-4.853-2.574-6.567c-1.704-1.712-3.894-2.568-6.563-2.568h-54.816
+			c-2.666,0-4.855,0.856-6.57,2.568c-1.711,1.714-2.566,3.905-2.566,6.567v55.673l-69.662-58.245
+			c-6.084-4.949-13.318-7.423-21.694-7.423c-8.375,0-15.608,2.474-21.698,7.423L3.172,225.438c-1.903,1.52-2.946,3.566-3.14,6.136
+			c-0.193,2.568,0.472,4.811,1.997,6.713l17.701,21.128c1.525,1.712,3.521,2.759,5.996,3.142c2.285,0.192,4.57-0.476,6.855-1.998
+			L230.149,95.817l197.57,164.741c1.526,1.328,3.521,1.991,5.996,1.991h0.858c2.471-0.376,4.463-1.43,5.996-3.138l17.703-21.125
+			c1.522-1.906,2.189-4.145,1.991-6.716C460.068,229.007,459.021,226.961,457.122,225.438z"/>
+            </g>
+        </symbol>
+
+        <symbol id="phone" viewBox="0 0 513.64 513.64">
+            <g>
+                <path d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72
+			c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68
+			c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44
+			l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z"/>
+            </g>
+        </symbol>
+
+        <symbol id="mail" viewBox="0 0 512 512">
+            <g>
+                <path d="M467,76H45C20.137,76,0,96.262,0,121v270c0,24.885,20.285,45,45,45h422c24.655,0,45-20.03,45-45V121
+			C512,96.306,491.943,76,467,76z M460.698,106c-9.194,9.145-167.415,166.533-172.878,171.967c-8.5,8.5-19.8,13.18-31.82,13.18
+			s-23.32-4.681-31.848-13.208C220.478,274.284,64.003,118.634,51.302,106H460.698z M30,384.894V127.125L159.638,256.08L30,384.894z
+			 M51.321,406l129.587-128.763l22.059,21.943c14.166,14.166,33,21.967,53.033,21.967c20.033,0,38.867-7.801,53.005-21.939
+			l22.087-21.971L460.679,406H51.321z M482,384.894L352.362,256.08L482,127.125V384.894z"/>
+            </g>
+        </symbol>
+
+        <symbol id="facebook" viewBox="0 0 24 24">
+            <g>
+                <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323
+        5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077
+        2.051-2.077z"/>
+            </g>
+        </symbol>
+
+        <symbol id="twitter" viewBox="0 0 24 24">
+            <g>
+                <path d="m21.534 7.113c.976-.693 1.797-1.558 2.466-2.554v-.001c-.893.391-1.843.651-2.835.777 1.02-.609
+        1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724 0-4.917
+        2.211-4.917 4.921 0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487
+        0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942
+        4.835-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8
+        2.098-6.101 2.098-.403 0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683 0 14.342-7.244
+        13.986-14.637z"/>
+            </g>
+        </symbol>
+
+        <symbol id="pinterest" viewBox="0 0 579.148 579.148">
+            <g>
+                <path d="M434.924,38.847C390.561,12.954,342.107,0.01,289.574,0.01c-52.54,0-100.992,12.944-145.356,38.837
+			C99.854,64.741,64.725,99.87,38.837,144.228C12.944,188.597,0,237.049,0,289.584c0,58.568,15.955,111.732,47.883,159.486
+			c31.922,47.768,73.771,83.08,125.558,105.949c-1.01-26.896,0.625-49.137,4.902-66.732l37.326-157.607
+			c-6.285-12.314-9.425-27.645-9.425-45.999c0-21.365,5.404-39.217,16.212-53.538c10.802-14.333,24.003-21.5,39.59-21.5
+			c12.564,0,22.246,4.143,29.034,12.448c6.787,8.292,10.184,18.727,10.184,31.292c0,7.797-1.451,17.289-4.334,28.47
+			c-2.895,11.187-6.665,24.13-11.31,38.837c-4.651,14.701-7.98,26.451-9.994,35.252c-3.525,15.33-0.63,28.463,8.672,39.4
+			c9.295,10.936,21.616,16.4,36.952,16.4c26.898,0,48.955-14.951,66.176-44.865c17.217-29.914,25.826-66.236,25.826-108.973
+			c0-32.925-10.617-59.701-31.859-80.312c-21.242-20.606-50.846-30.918-88.795-30.918c-42.486,0-76.862,13.642-103.123,40.906
+			c-26.267,27.277-39.401,59.896-39.401,97.84c0,22.625,6.414,41.609,19.229,56.941c4.272,5.029,5.655,10.428,4.149,16.205
+			c-0.508,1.512-1.511,5.281-3.017,11.309c-1.505,6.029-2.515,9.934-3.017,11.689c-2.014,8.049-6.787,10.564-14.333,7.541
+			c-19.357-8.043-34.064-21.99-44.113-41.85c-10.055-19.854-15.08-42.852-15.08-68.996c0-16.842,2.699-33.685,8.103-50.527
+			c5.404-16.842,13.819-33.115,25.264-48.832c11.432-15.698,25.135-29.596,41.102-41.659c15.961-12.069,35.38-21.738,58.256-29.04
+			c22.871-7.283,47.51-10.93,73.904-10.93c35.693,0,67.744,7.919,96.146,23.751c28.402,15.839,50.086,36.329,65.043,61.463
+			c14.951,25.135,22.436,52.026,22.436,80.692c0,37.705-6.541,71.641-19.607,101.807c-13.072,30.166-31.549,53.855-55.43,71.072
+			c-23.887,17.215-51.035,25.826-81.445,25.826c-15.336,0-29.664-3.58-42.986-10.748c-13.33-7.166-22.503-15.648-27.528-25.453
+			c-11.31,44.486-18.097,71.018-20.361,79.555c-4.78,17.852-14.584,38.457-29.413,61.836c26.897,8.043,54.296,12.062,82.198,12.062
+			c52.534,0,100.987-12.943,145.35-38.83c44.363-25.895,79.492-61.023,105.387-105.393c25.887-44.365,38.838-92.811,38.838-145.352
+			c0-52.54-12.951-100.985-38.838-145.355C514.422,99.87,479.287,64.741,434.924,38.847z"/>
+            </g>
+        </symbol>
+
+        <symbol id="google+" viewBox="0 0 604.35 604.35">
+            <g>
+            <path d="M516.375,255v-76.5h-51V255h-76.5v51h76.5v76.5h51V306h76.5v-51H516.375z M320.025,341.7l-28.051-20.4
+			c-10.2-7.649-20.399-17.85-20.399-35.7s12.75-33.15,25.5-40.8c33.15-25.5,66.3-53.55,66.3-109.65c0-53.55-33.15-84.15-51-99.45
+			h43.35l30.6-35.7h-158.1c-112.2,0-168.3,71.4-168.3,147.9c0,58.65,45.9,122.4,127.5,122.4h20.4c-2.55,7.65-10.2,20.4-10.2,33.15
+			c0,25.5,10.2,35.7,22.95,51c-35.7,2.55-102,10.2-150.45,40.8c-45.9,28.05-58.65,66.3-58.65,94.35
+			c0,58.65,53.55,114.75,168.3,114.75c137.7,0,204.001-76.5,204.001-150.449C383.775,400.35,355.725,372.3,320.025,341.7z
+			 M126.225,109.65c0-56.1,33.15-81.6,68.85-81.6c66.3,0,102,89.25,102,140.25c0,66.3-53.55,79.05-73.95,79.05
+			C159.375,247.35,126.225,168.3,126.225,109.65z M218.024,568.65c-84.15,0-137.7-38.25-137.7-94.351c0-56.1,51-73.95,66.3-81.6
+			c33.15-10.2,76.5-12.75,84.15-12.75s12.75,0,17.85,0c61.2,43.35,86.7,61.2,86.7,102C335.324,530.4,286.875,568.65,218.024,568.65z
+			"/>
+            </g>
+        </symbol>
+
+        <symbol id="close" viewBox="0 0 365.696 365.696">
+            <g>
+                <path d="m243.1875 182.859375 113.132812-113.132813c12.5-12.5 12.5-32.765624
+        0-45.246093l-15.082031-15.082031c-12.503906-12.503907-32.769531-12.503907-45.25 0l-113.128906
+        113.128906-113.132813-113.152344c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5
+        12.503907-12.5 32.769531 0 45.25l113.152344 113.152344-113.128906 113.128906c-12.503907 12.503907-12.503907
+        32.769531 0 45.25l15.082031 15.082031c12.5 12.5 32.765625 12.5 45.246093 0l113.132813-113.132812 113.128906
+        113.132812c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082031c12.5-12.503906 12.5-32.769531
+        0-45.25zm0 0"/>
+            </g>
+        </symbol>
+
+        <symbol id="menu" viewBox="0 0 60.123 60.123">
+            <g>
+                <path d="M57.124,51.893H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3S58.781,51.893,57.124,51.893z"/>
+                <path d="M57.124,33.062H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3
+		        C60.124,31.719,58.781,33.062,57.124,33.062z"/>
+                <path d="M57.124,14.231H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3S58.781,14.231,57.124,14.231z"/>
+                <circle cx="4.029" cy="11.463" r="4.029"/>
+                <circle cx="4.029" cy="30.062" r="4.029"/>
+                <circle cx="4.029" cy="48.661" r="4.029"/>
+            </g>
+        </symbol>
+    </svg>
+<!-- Header-->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">Executive</div>
+                <nav class="nav" id="nav">
+                    <a  class="nav__item" href="#" data-scroll="#intro"> Home</a>
+                    <a  class="nav__item" href="#" data-scroll="#service"> Services</a>
+                    <a  class="nav__item" href="#" data-scroll="#about"> About</a>
+                    <a  class="nav__item" href="#" data-scroll="#works"> Portfolio</a>
+                    <a  class="nav__item" href="#" data-scroll="#pricing"> Pricing</a>
+                    <a  class="nav__item" href="#" data-scroll="#team"> Team</a>
+                    <a  class="nav__item" href="#" data-scroll="#clients"> Clients</a>
+                    <a  class="nav__item" href="#" data-scroll="#contact"> Contact us</a>
+                </nav>
+                <button class="burger" type="button" id="navToggle">
+                        <svg class="burger__icon">
+                            <use xlink:href="#menu"></use>
+                        </svg>
+                </button>
+            </div> <!-- ./header__inner-->
+        </div> <!-- ./container-->
+    </header>
+
+<!-- Intro-->
+    <div class="intro" id="intro">
+        <div class="introSlider" id="intro__slider">
+            <div class="slick-item">
+                <div class="intro__item">
+                    <img class="intro__img" src="slider/img1.jpg">
+                    <div class="intro__content">
+                        <div class="intro__title"> Consultancy</div>
+                        <div class="intro__subtitle"> best business</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slick-item">
+                <div class="intro__item">
+                    <img class="intro__img" src="slider/img2.jpg">
+                    <div class="intro__content">
+                        <div class="intro__title"> Executive</div>
+                        <div class="intro__subtitle"> best business</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slick-item">
+                <div class="intro__item">
+                    <img class="intro__img" src="slider/img3.jpg">
+                    <div class="intro__content">
+                        <div class="intro__title"> Solution</div>
+                        <div class="intro__subtitle"> best business</div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- ./intro__slider-->
+    </div> <!-- ./intro-->
+
+<!-- Content-->
+    <div class="content">
+        <div class="container">
+            <div class="content__inner">
+                <div class="content__col1">
+                    <h3 class="content__title">WELCOME To Business</h3>
+                    <p class="content__text">The generated Lorem Ipsum is therefore always free from repetition,
+                    injected humour, or non-characteristic words etc.</p>
+                    <p class="content__text">The generated Lorem Ipsum is therefore always free from repetition,
+                    injected humour, or non-characteristic words etc.</p>
+                    <p class="content__text">The generated Lorem Ipsum is therefore always free from repetition.</p>
+                </div>
+                <div class="content__col2">
+                    <p class="content__text--gr"> Looking For Best Consultancy For Your Business, Here Is
+                    The More Details Of Our Amazing Services <br>
+                    <b>BEST In INDUSTRY</b>
+                    </p>
+                    <a class="button" href="#">Read More</a>
+                </div>
+            </div> <!-- ./content__inner-->
+        </div> <!-- ./container-->
+    </div> <!-- ./content-->
+
+<!-- Services-->
+    <div class="services" id="service">
+        <div class="container">
+            <div class="services__header">
+                <h2 class="services__title">Services</h2>
+                <p class="services__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis quas, saepe minima
+                error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque.
+                </p>
+            </div>
+            <div class="services__inner">
+                <div class="services__item">
+                    <div class="services__box">
+                        <svg class="services__icon">
+                            <use xlink:href="#graphic"></use>
+                        </svg>
+                        <div class="services__name">
+                            Graphic Design
+                        </div>
+                        <div class="services__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam eos eius
+                        quisquam odio itaque.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__box">
+                        <svg class="services__icon">
+                            <use xlink:href="#computer"></use>
+                        </svg>
+                        <div class="services__name">
+                            Webdesign
+                        </div>
+                        <div class="services__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam eos eius
+                        quisquam odio itaque.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__box">
+                        <svg class="services__icon">
+                            <use xlink:href="#dolar"></use>
+                        </svg>
+                        <div class="services__name">
+                            Mobiel Dev
+                        </div>
+                        <div class="services__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam eos eius
+                        quisquam odio itaque.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__box">
+                        <svg class="services__icon">
+                            <use xlink:href="#laptop"></use>
+                        </svg>
+                        <div class="services__name">
+                            App Dev
+                        </div>
+                        <div class="services__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam eos eius
+                        quisquam odio itaque.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__box">
+                        <svg class="services__icon">
+                            <use xlink:href="#picture"></use>
+                        </svg>
+                        <div class="services__name">
+                            Outsourcing
+                        </div>
+                        <div class="services__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam eos eius
+                        quisquam odio itaque.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__box">
+                        <svg class="services__icon">
+                            <use xlink:href="#volume"></use>
+                        </svg>
+                        <div class="services__name">
+                            Quality
+                        </div>
+                        <div class="services__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam eos eius
+                        quisquam odio itaque.
+                        </div>
+                    </div>
+                </div>
+            </div><!-- ./services__inner-->
+        </div> <!-- ./container-->
+    </div> <!-- ./services-->
+
+<!--About-->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="about__header">
+                <h2 class="about__title"> About</h2>
+                <p class="about__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis ,
+                saepe minima error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque.</p>
+            </div>
+            <div class="about__inner">
+                <div class="about__photo">
+                    <img class="about__img" src="features.png" alt="feature1">
+                </div>
+                <div class="about__content">
+                    <p class="about__text about__text--new"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ipsa sit, numquam amet voluptatibus obcaecati ea maiores totam nostrum, ad iure rerum quas harum
+                    ipsum. lobcaecati ea maiores totam nostrum, ad iure rerum quas harum ipsum. Rem ea ducimus quos
+                    quae quo.</p>
+                    <p class="about__text about__text--new"> <strong>Bootstrap</strong> <br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iusto, natus est ducimus
+                    saepe laborum</p>
+                    <p class="about__text about__text--new"><strong>Responisve Theme</strong> <br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iusto, natus
+                    est ducimus saepe laborum Lorem ipsum dolor sit amet.</p>
+                    <p class="about__text about__text--new"><strong> HTML5/CSS3</strong> <br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iusto, natus est
+                    ducimus saepe laborum Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div> <!-- ./about__inner-->
+        </div> <!-- ./container-->
+    </div> <!-- ./about-->
+
+<!--Portfolio-->
+    <div class="works" id="works">
+        <div class="container">
+            <div class="works__header">
+                <h2 class="works__title">Portfolio</h2>
+                <p class="works__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis
+                quas, saepe minima error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque.</p>
+                <div class="works__nav">
+                    <a class="button button--port" href="#" data-filter="all">All</a>
+                    <a class="button button--port" href="#" data-filter="web">Web</a>
+                    <a class="button button--port" href="#" data-filter="seo">Seo</a>
+                    <a class="button button--port" href="#" data-filter="works">Works</a>
+                    <a class="button button--port" href="#" data-filter="brands">Brands</a>
+                </div>
+            </div><!-- ./works__header-->
+        </div> <!-- ./container-->
+        <div class="works__inner">
+            <div class="works__item" data-cat="web">
+                <img class="works__photo" src="img-portfolio/portfolio1.jpg" alt="portfolio1">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project1">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="works__item" data-cat="seo">
+                <img class="works__photo" src="img-portfolio/portfolio2.jpg" alt="portfolio2">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project2">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="works__item" data-cat="web">
+                <img class="works__photo" src="img-portfolio/portfolio3.jpg" alt="portfolio3">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project3">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="works__item" data-cat="brands">
+                <img class="works__photo" src="img-portfolio/portfolio4.jpg" alt="portfolio4">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project4">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="works__item" data-cat="works">
+                <img class="works__photo" src="img-portfolio/portfolio5.jpg" alt="portfolio5">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project5">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="works__item" data-cat="works">
+                <img class="works__photo" src="img-portfolio/portfolio6.jpg" alt="portfolio6">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project6">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="works__item" data-cat="seo">
+                <img class="works__photo" src="img-portfolio/portfolio7.jpg" alt="portfolio7">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project7">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="works__item" data-cat="brands">
+                <img class="works__photo" src="img-portfolio/portfolio2.jpg" alt="portfolio8">
+                <div class="works__content">
+                    <button class="works__btn" type="button" data-modal="#modal__project8">
+                        <svg class="works__icon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div> <!-- ./works__inner-->
+    </div> <!-- ./works-->
+    
+    
+<!--Pricing-->
+    <div class="pricing" id="pricing">
+        <div class="container">
+            <div class="pricing__header">
+                <h2 class="pricing__title">Pricing</h2>
+                <p class="pricing__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis
+                quas, saepe minima error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque.</p>
+            </div>
+            <div class="pricing__inner">
+                <div class="pricing__item">
+                    <div class="pricing__box">
+                        <h5 class="pricing__name">Starter</h5>
+                        <p class="pricing__price">$16/<span>Month</span></p>
+                        <ul>
+                            <li class="pricing__content">30 Tempaltes</li>
+                            <li class="pricing__content">Responsive</li>
+                            <li class="pricing__content">3 Years Hosting</li>
+                            <li class="pricing__content">100 GB Data</li>
+                            <li class="pricing__content">Unlimited Bandwidth</li>
+                            <li class="pricing__content">24/7 Support</li>
+                        </ul>
+                        <a class="button button--green" href="#">Get Now</a>
+                    </div>
+                </div>
+
+                <div class="pricing__item">
+                    <div class="pricing__box">
+                        <h5 class="pricing__name">Developer</h5>
+                        <p class="pricing__price">$69/<span>Month</span></p>
+                        <ul>
+                            <li class="pricing__content">30 Tempaltes</li>
+                            <li class="pricing__content">Responsive</li>
+                            <li class="pricing__content">3 Years Hosting</li>
+                            <li class="pricing__content">100 GB Data</li>
+                            <li class="pricing__content">Unlimited Bandwidth</li>
+                            <li class="pricing__content">24/7 Support</li>
+                        </ul>
+                        <a class="button button--green" href="#">Get Now</a>
+                    </div>
+                </div>
+
+                <div class="pricing__item">
+                    <div class="pricing__box">
+                        <h5 class="pricing__name">Professional</h5>
+                        <p class="pricing__price">$99/<span>Month</span></p>
+                        <ul>
+                            <li class="pricing__content">30 Tempaltes</li>
+                            <li class="pricing__content">Responsive</li>
+                            <li class="pricing__content">3 Years Hosting</li>
+                            <li class="pricing__content">100 GB Data</li>
+                            <li class="pricing__content">Unlimited Bandwidth</li>
+                            <li class="pricing__content">24/7 Support</li>
+                        </ul>
+                        <a class="button button--green" href="#">Get Now</a>
+                    </div>
+                </div>
+            </div> <!-- ./pricing__inner-->
+        </div> <!-- ./container-->
+    </div> <!-- ./pricing-->
+
+<!--Team-->
+    <div class="team" id="team">
+        <div class="container">
+            <div class="team__header">
+                <h2 class="team__title">Team</h2>
+                <p class="team__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis
+                quas, saepe minima error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque.</p>
+            </div>
+            <div class="team__inner">
+                <div class="team__item">
+                    <img class="team__photo" src="img-teams/team1.jpg" alt="team1">
+                    <h5 class="team__name">Chris Willam</h5>
+                    <p class="team__text">Lorem ipsum dolor sit amet, consectetur adipisic</p>
+                </div>
+
+                <div class="team__item">
+                    <img class="team__photo" src="img-teams/team2.jpg" alt="team2">
+                    <h5 class="team__name">Randy Dode</h5>
+                    <p class="team__text">Lorem ipsum dolor sit amet, consectetur adipisic</p>
+                </div>
+
+                <div class="team__item">
+                    <img class="team__photo" src="img-teams/team3.jpg" alt="team3">
+                    <h5 class="team__name">Michel Kimte</h5>
+                    <p class="team__text">Lorem ipsum dolor sit amet, consectetur adipisic</p>
+                </div>
+            </div> <!-- ./team__inner-->
+        </div> <!-- ./container-->
+    </div> <!-- ./team-->
+
+<!--Clients-->
+    <div class="clients" id="clients">
+        <div class="container">
+            <div class="clients__inner">
+                <h2 class="clients__title">Clients</h2>
+                <p class="clients__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis
+                quas, saepe minima error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque.</p>
+                <img class="clients__img" src="clients/amazon.png" alt="amazon">
+                <img class="clients__img" src="clients/ebay.png" alt="ebay">
+                <img class="clients__img" src="clients/google.png" alt="google">
+                <img class="clients__img" src="clients/vadafone.png" alt="vadafone">
+                <img class="clients__img" src="clients/spinworkx.png" alt="spinworkx">
+                <img class="clients__img" src="clients/cocacola.png" alt="cocacola">
+            </div> <!-- ./clients__inner-->
+        </div> <!-- ./container-->
+    </div> <!-- ./clients-->
+
+<!--Contact-->
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="contact__header">
+                <h2 class="contact__title">Contact Us</h2>
+                <p class="contact__text">We love feedback. Fill out the form below and we'll get back to you as soon
+                as possible. in minus distinctio dolores ipsam.</p>
+            </div>
+            <form action="/" method="post">
+                <div class="contact__inner">
+                    <div class="contact__item">
+                        <input class="contact__input" type="text" placeholder="Full Name">
+                    </div>
+                    <div class="contact__item">
+                        <input class="contact__input" type="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="contact__t">
+                    <textarea class="contact__message" rows="10" cols="100" placeholder="Message"></textarea>
+                </div>
+            </form>
+            <div class="contact__btn">
+                <a class="button button--green" href="#">Submit Message</a>
+            </div>
+        </div> <!-- ./container-->
+    </div> <!-- ./contact-->
+
+<!--Info-->
+    <div class="info">
+        <div class="container">
+            <div class="info__inner">
+                <div class="info__item">
+                    <h6 class="info__title">EXECUTIVE</h6>
+                    <p class="info__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et porro quos iste
+                    ratione doloribus asperiores, error omnis delectus rerum sapiente. Et, aliquam modi beatae quae in
+                    perferendis ab est fugiat!</p>
+                </div>
+
+                <div class="info__item">
+                    <h6 class="info__title">News & Updates</h6>
+                    <p class="info__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis
+                    quas, saepe minima error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque.
+                    </p>
+                </div>
+
+                <div class="info__item">
+                    <h6 class="info__title">Contact Us</h6>
+                    <p class="info__text">Lorem ipsum dolor sit amet adipisicing elit. </p>
+                    <ul class="info__contacts">
+                        <li class="info__contacts-item"> <svg class="info__icon">
+                            <use xlink:href="#home"></use>
+                        </svg> 123 New Venu Street</li>
+                        <li class="info__contacts-item"> <svg class="info__icon">
+                            <use xlink:href="#phone"></use>
+                        </svg>001 123 12345 99</li>
+                        <li class="info__contacts-item"> <svg class="info__icon">
+                            <use xlink:href="#mail"></use>
+                        </svg> support@website.com</li>
+                    </ul>
+                </div>
+            </div><!-- ./info__inner-->
+        </div> <!-- ./container-->
+    </div><!-- ./info-->
+
+<!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="#">
+                    <div class="footer__item">
+                        <svg class="footer__icon">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="footer__item">
+                        <svg class="footer__icon">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="footer__item">
+                        <svg class="footer__icon">
+                            <use xlink:href="#pinterest"></use>
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="footer__item">
+                        <svg class="footer__icon">
+                            <use xlink:href="#google+"></use>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <p class="footer__text">Copyright © 2018. Template by: <a class="footer__link"
+            href="http://webthemez.com/free-bootstrap-templates/" target="_blank">WebThemez</a>, All rights
+            reserved </p>
+        </div>
+    </footer>
+
+
+<!--Modals-->
+    <div class="modal" id="modal__project1">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio1.jpg" alt="portfolio1">
+                <div class="modal__text">1 of 8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal__project2">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio2.jpg" alt="portfolio2">
+                <div class="modal__text">2 of 8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal__project3">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio3.jpg" alt="portfolio3">
+                <div class="modal__text">3 of 8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal__project4">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio4.jpg" alt="portfolio4">
+                <div class="modal__text">4 of 8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal__project5">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio5.jpg" alt="portfolio5">
+                <div class="modal__text">5 of 8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal__project6">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio6.jpg" alt="portfolio6">
+                <div class="modal__text">6 of 8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal__project7">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio7.jpg" alt="portfolio7">
+                <div class="modal__text">7 of 8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal__project8">
+        <div class="modal__dialog">
+            <div class="modal__inner">
+                <button type="button" class="modal__btn" data-close>
+                    <svg class="modal__icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <img class="modal__photo" src="img-portfolio/portfolio2.jpg" alt="portfolio2">
+                <div class="modal__text">8 of 8</div>
+            </div>
+        </div>
+    </div>
+
+
+<!--Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="app.js"></script>
+
 </body>
 </html>
